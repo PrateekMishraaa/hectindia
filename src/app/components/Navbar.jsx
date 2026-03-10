@@ -103,7 +103,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation - Hidden on desktop */}
-        <div className='lg:hidden mt-3 pt-3 border-t'>
+        <div className='lg:hidden mt-3 pt-3 '>
           <div className='flex flex-wrap items-center gap-3 text-sm'>
             {/* List a Hotel */}
             <div className='flex items-center space-x-1'>
