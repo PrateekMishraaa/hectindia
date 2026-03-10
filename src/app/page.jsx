@@ -11,6 +11,10 @@ import TourOne from "../../public/s2.webp" // Add your tour images
 import TourTwo from "../../public/s3.webp"
 import TourThree from "../../public/s4.webp" // Add your tour images
 import TourFour from "../../public/s5.webp"
+import RoomOne from "../../public/room1.webp"
+import RoomTwo from "../../public/room2.webp"
+import RoomThree from "../../public/room3.webp"
+import RoomFour from "../../public/room4.webp"
 import Image from 'next/image'
 
 const page = () => {
@@ -74,6 +78,28 @@ const page = () => {
       image: TourFour,
       price: "On Request"
     }
+  ]
+
+  const roomdetails=[
+    {
+      img:RoomOne,
+      rating:"*****",
+      title:"ITC Grand Bharat Gurgaon A Luxury Collection Retreat.",
+    },
+      {
+      img:RoomTwo,
+      rating:"*****",
+      title:"Lemon Tree Hotel Tarudhan Valley",
+    },
+      {
+      img:RoomThree,
+      rating:"*****",
+      title:"The Westin Sohna Resort & Spa",
+    },  {
+      img:RoomFour,
+      rating:"*****",
+      title:"Treehouse Hotel Club and Spa Bhiwadi",
+    },
   ]
 
   return (
@@ -312,6 +338,45 @@ const page = () => {
               </div>
             </div>
           </div>
+             <div className='h-auto w-full px-4 md:px-20 py-8'>
+        <div className='container mx-auto'>
+          <h2 className='text-2xl font-bold text-gray-800 mb-6'>Recommended Hotels</h2>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+            {roomdetails.map((item, index) => (
+              <div key={index} className='bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow'>
+                {/* Hotel Image */}
+                <div className='h-48 w-full relative'>
+                  <Image 
+                    src={item.img} 
+                    alt={item.title}
+                    fill
+                    className='object-cover'
+                  />
+                </div>
+                
+                {/* Hotel Details */}
+                <div className='p-4'>
+                  <h3 className='font-semibold text-gray-800 mb-2 line-clamp-2'>
+                    {item.title}
+                  </h3>
+                  
+                  {/* Rating */}
+                  <div className='flex items-center mb-3'>
+                    <span className='text-sm font-medium text-gray-600'>
+                      {item.rating}/5 ({item.reviews} {item.reviews === 1 ? 'review' : 'reviews'})
+                    </span>
+                  </div>
+                  
+                  {/* Price */}
+                  <div className='text-orange-600 font-semibold'>
+                    {item.price}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
         </div>
       </section>
     </main>
