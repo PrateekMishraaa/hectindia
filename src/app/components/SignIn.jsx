@@ -22,12 +22,12 @@ const SignIn = () => {
     }
   return (
     <div className="bg-white rounded-lg w-full max-w-md p-8">
-      {/* Header */}
+ 
       <h1 className="text-3xl font-bold text-gray-800 mb-6">Log In</h1>
 
-      {/* Form */}
+ 
       <form className="space-y-5" onSubmit={handleSubmit}>
-        {/* Email Field */}
+
         <div>
           <label className="block text-sm text-gray-600 mb-1">
             Email address
@@ -41,7 +41,6 @@ const SignIn = () => {
           />
         </div>
 
-        {/* Password Field */}
         <div className='flex justify-between'>
           <label className="block text-sm text-gray-600 mb-1">
             Password
@@ -60,7 +59,6 @@ const SignIn = () => {
           </span>
         </div>
 
-        {/* Remember Me & Forgot Password */}
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <input
@@ -76,7 +74,6 @@ const SignIn = () => {
           </button>
         </div>
 
-        {/* Login Button */}
         <button
           type="submit"
           className="w-full bg-orange-600 text-white font-semibold py-2.5 rounded hover:bg-orange-700 transition-colors"
@@ -84,7 +81,7 @@ const SignIn = () => {
           LOGIN
         </button>
 
-        {/* Divider */}
+
         <div className="relative my-6">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-gray-300"></div>
@@ -94,7 +91,6 @@ const SignIn = () => {
           </div>
         </div>
 
-        {/* Social Login */}
         <div className="flex gap-3">
           <button className="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white py-2.5 rounded hover:bg-blue-700 transition-colors">
             <FaFacebookF size={16} />
@@ -106,7 +102,6 @@ const SignIn = () => {
           </button>
         </div>
 
-        {/* Sign Up Link */}
         <p className="text-center text-sm text-gray-600 mt-4">
           Do not have an account?{' '}
           <button className="text-orange-600 hover:underline font-medium">

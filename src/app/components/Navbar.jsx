@@ -14,7 +14,7 @@ import SignIn from './SignIn'
 
 const Navbar = () => {
     const [openSignIn, setOpenSignIn] = useState(false)
-    const [isLogin, setIsLogin] = useState(true) // true for login, false for register
+    const [isLogin, setIsLogin] = useState(true) 
 
     const handleOpenSignIn = () => {
         setOpenSignIn(!openSignIn)
@@ -37,10 +37,10 @@ const Navbar = () => {
     return (
         <>
             <nav className='w-full bg-white shadow-sm'>
-                {/* Top bar with social and contact */}
+             
                 <div className='hidden lg:flex justify-end items-center px-4 lg:px-8 py-2 text-sm text-gray-600 border-b'>
                     <div className='flex items-center space-x-4'>
-                        {/* Social Icons */}
+                     
                         <div className='flex items-center space-x-3'>
                             <Link href="#" className='hover:text-orange-600 transition-colors'>
                                 <FaFacebookF size={14} />
@@ -61,7 +61,6 @@ const Navbar = () => {
 
                         <span className='text-gray-300'>|</span>
 
-                        {/* Phone */}
                         <div className='flex items-center space-x-1'>
                             <FaPhone className='text-orange-600' size={12} />
                             <span>+91 9999599100</span>
@@ -69,19 +68,17 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                {/* Main Navigation */}
                 <div className='px-4 lg:px-8 py-3'>
                     <div className='flex items-center justify-between'>
-                        {/* Logo */}
+                  
                         <div className='flex items-center'>
                             <div className='text-2xl font-bold'>
                                 <Image src={Logo} alt="HECT INDIA Logo" />
                             </div>
                         </div>
 
-                        {/* Desktop Navigation - Hidden on mobile */}
                         <div className='hidden lg:flex items-center space-x-6'>
-                            {/* List a Hotel */}
+                           
                             <div className='flex items-center space-x-1 group cursor-pointer'>
                                 <HiOutlineBuildingLibrary className='text-gray-800' size={18} />
                                 <span className='text-gray-700 group-hover:text-orange-600 transition-colors'>
@@ -89,7 +86,7 @@ const Navbar = () => {
                                 </span>
                             </div>
 
-                            {/* Sell Tours */}
+                      
                             <div className='flex items-center space-x-1 group cursor-pointer'>
                                 <IoAirplane className='text-gray-800' size={18} />
                                 <span className='text-gray-800 group-hover:text-orange-600 transition-colors'>
@@ -97,7 +94,7 @@ const Navbar = () => {
                                 </span>
                             </div>
 
-                            {/* Manage Trips */}
+                          
                             <div className='flex items-center space-x-1 group cursor-pointer'>
                                 <IoTicket className='text-gray-800' size={18} />
                                 <span className='text-gray-800 group-hover:text-orange-600 transition-colors'>
@@ -106,7 +103,7 @@ const Navbar = () => {
                             </div>
                         </div>
 
-                        {/* Auth Buttons */}
+                        
                         <div className='flex items-center'>
                             <button 
                                 onClick={handleOpenLogin}
@@ -122,17 +119,17 @@ const Navbar = () => {
                                 Register
                             </button>
 
-                            {/* Mobile Menu Button */}
+                    
                             <button className='lg:hidden ml-2 p-2'>
                                 <FiMenu size={24} className='text-gray-700' />
                             </button>
                         </div>
                     </div>
 
-                    {/* Mobile Navigation - Hidden on desktop */}
+                  
                     <div className='lg:hidden mt-3 pt-3'>
                         <div className='flex flex-wrap items-center gap-3 text-sm'>
-                            {/* List a Hotel */}
+                        
                             <div className='flex items-center space-x-1'>
                                 <HiOutlineBuildingLibrary className='text-orange-600' size={16} />
                                 <span className='text-gray-700'>List a Hotel</span>
@@ -140,18 +137,17 @@ const Navbar = () => {
 
                             <span className='text-gray-300'>|</span>
 
-                            {/* Sell Tours */}
                             <span className='text-gray-700'>Sell Tours</span>
 
                             <span className='text-gray-300'>|</span>
 
-                            {/* Manage Trips */}
+                            
                             <span className='text-gray-700'>Manage Trips</span>
                         </div>
 
-                        {/* Mobile Social and Contact */}
+                      
                         <div className='flex items-center justify-between mt-3'>
-                            {/* Social Icons */}
+                
                             <div className='flex items-center space-x-3'>
                                 <Link href="#" className='text-gray-600 hover:text-orange-600'>
                                     <FaFacebookF size={14} />
@@ -170,7 +166,7 @@ const Navbar = () => {
                                 </Link>
                             </div>
 
-                            {/* Phone */}
+                 
                             <div className='flex items-center space-x-1'>
                                 <FaPhone className='text-orange-600' size={12} />
                                 <span className='text-sm text-gray-700'>+91 9999599100</span>
@@ -180,20 +176,19 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {/* Sign In Popup */}
             {openSignIn && (
                 <>
-                    {/* Overlay */}
+           
                     <div 
                         className="fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity"
                         onClick={handleClosePopup}
                     />
                     
-                    {/* Popup Container */}
+          
                     <div className="fixed inset-0 z-50 overflow-y-auto">
                         <div className="flex min-h-full items-center justify-center p-4">
                             <div className="relative bg-white rounded-lg shadow-xl w-full max-w-md">
-                                {/* Close Button */}
+                               
                                 <button 
                                     onClick={handleClosePopup}
                                     className="absolute right-4 top-4 text-gray-400 hover:text-gray-600 transition-colors"
@@ -201,7 +196,7 @@ const Navbar = () => {
                                     <FaTimes size={20} />
                                 </button>
                                 
-                                {/* SignIn Component */}
+                             
                                 <SignIn 
                                     isLogin={isLogin} 
                                     onClose={handleClosePopup}

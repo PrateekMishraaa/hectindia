@@ -1,4 +1,4 @@
-// components/Footer.jsx
+
 import React from 'react'
 import Link from 'next/link'
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa'
@@ -132,7 +132,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-300 text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
-        {/* Main Footer Content - All Sections */}
+
         <div className="space-y-8 mb-8">
           {footerSections.map((section, index) => (
             <div key={index} className="border-b border-gray-800 pb-6 last:border-b-0">
@@ -152,7 +152,7 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Social Media Icons */}
+       
         <div className="flex justify-center space-x-6 mb-8 pt-6 border-t border-gray-800">
           <Link href="#" className="bg-gray-800 p-3 rounded-full hover:bg-orange-600 transition-colors">
             <FaFacebookF className="text-white" size={18} />
@@ -171,7 +171,7 @@ const Footer = () => {
           </Link>
         </div>
 
-        {/* Copyright */}
+  
         <div className="text-center text-sm text-gray-500">
           <p>© 2025 HECT India Pvt. Ltd.</p>
         </div>
