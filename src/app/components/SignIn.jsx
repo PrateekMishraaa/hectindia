@@ -1,14 +1,32 @@
-import React from 'react'
-import { FaFacebookF, FaGoogle } from 'react-icons/fa'
+import React, { useState } from 'react'
+import { FaFacebookF, FaGoogle,FaEye,FaEyeSlash } from 'react-icons/fa'
+
 
 const SignIn = () => {
+    const [isVisible,setIsVisible] = useState(false)
+    const [formData,setFormData] = useState({
+        email:"",
+        password:""
+    })
+    console.log('this is formdata',formData)
+
+    const handleViewPassword=()=>{
+        setIsVisible(!isVisible)
+    }
+    const handleChange=(e)=>{
+        setFormData({...formData,[e.target.name]:e.target.value})
+    }
+    const handleSubmit=(e)=>{
+        e.preventDefault()
+
+    }
   return (
     <div className="bg-white rounded-lg w-full max-w-md p-8">
       {/* Header */}
       <h1 className="text-3xl font-bold text-gray-800 mb-6">Log In</h1>
 
       {/* Form */}
-      <form className="space-y-5">
+      <form className="space-y-5" onSubmit={handleSubmit}>
         {/* Email Field */}
         <div>
           <label className="block text-sm text-gray-600 mb-1">
@@ -16,19 +34,30 @@ const SignIn = () => {
           </label>
           <input
             type="email"
+            name='email'
+            value={formData.email}
+            onChange={handleChange}
             className="w-full px-4 py-2.5 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500"
           />
         </div>
 
         {/* Password Field */}
-        <div>
+        <div className='flex justify-between'>
           <label className="block text-sm text-gray-600 mb-1">
             Password
           </label>
           <input
-            type="password"
+            type={isVisible?"text":"password"}
+            name='password'
+            value={formData.password}
+            onChange={handleChange}
             className="w-full px-4 py-2.5 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500"
           />
+          <span onClick={handleViewPassword}>
+            {
+                isVisible?<FaEye/>:<FaEyeSlash/>
+            }
+          </span>
         </div>
 
         {/* Remember Me & Forgot Password */}
